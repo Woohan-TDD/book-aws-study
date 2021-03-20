@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/
+
+hooks:
+  AfterInstall:
+    - location: scripts/set_owner.sh
+      timeout: 5
+      runas: root
+    - location: scripts/build_application.sh
+      timeout: 240
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/restart_server.sh
+      timeout: 10
+      runas: root
+  ValidateService:
+    - location: scripts/health_check.sh
+      timeout: 10
+      runas: ubuntu
