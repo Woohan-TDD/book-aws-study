@@ -12,10 +12,4 @@ public class JordyController {
     public String hello() {
         return "hello";
     }
-
-    @ResponseBody
-    @RequestMapping("/health")
-    public String healthCheck() {
-        return "ok";
-    }
 }
