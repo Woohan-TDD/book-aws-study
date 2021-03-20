@@ -1,0 +1,6 @@
+echo '======================'
+echo 'Running restart_server'
+echo '======================'
+
+cd /var/www/aws-exercise-a
+nohup java -jar build/libs/around-0.0.1-SNAPSHOT.jar &
