@@ -13,6 +13,9 @@ hooks:
       timeout: 240
       runas: ubuntu
   ApplicationStart:
+    - location: scripts/run_application.sh
+      timeout: 30
+      runas: ubuntu
     - location: scripts/restart_server.sh
       timeout: 10
       runas: root
