@@ -5,20 +5,20 @@ files:
     destination: /var/www/aws-exercise-a
 hooks:
   AfterInstall:
-    - location: scripts/set_owner
+    - location: scripts/set_owner.sh
       timeout: 5
       runas: root
-    - location: scripts/install_dependencies
+    - location: scripts/install_dependencies.sh
       timeout: 120
       runas: ec2-user
   ApplicationStart:
-    - location: scripts/restart_server
+    - location: scripts/restart_server.sh
       timeout: 5
       runas: root
-    - location: scripts/run_application_server
+    - location: scripts/run_application_server.sh
       timeout: 20
       runas: ec2-user
   ValidateService:
-    - location: scripts/validate_server
+    - location: scripts/validate_server.sh
       timeout: 30
       runas: ec2-user
