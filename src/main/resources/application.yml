@@ -1,1 +1,8 @@
-spring.mustache.suffix: .html
+spring:
+  mustache:
+    suffix: .html
+
+aws:
+  secretsManager:
+    secretName: "production/aws-exercise"
+    region: "ap-northeast-2"
